@@ -14,18 +14,27 @@ export default function Projects() {
             className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col gap-4"
           >
             <div className="flex items-start justify-between gap-3">
-              <h3 className="text-lg font-semibold text-white">
-                {project.name}
-              </h3>
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`GitHub: ${project.name}`}
-                className="text-slate-400 hover:text-blue-400 transition-colors shrink-0 mt-0.5"
-              >
-                <GitHubIcon size={18} />
-              </a>
+              <div className="flex items-center gap-2">
+                <h3 className="text-lg font-semibold text-white">
+                  {project.name}
+                </h3>
+                {project.badge && (
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-blue-900/60 text-blue-300 border border-blue-700">
+                    {project.badge}
+                  </span>
+                )}
+              </div>
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`GitHub: ${project.name}`}
+                  className="text-slate-400 hover:text-blue-400 transition-colors shrink-0 mt-0.5"
+                >
+                  <GitHubIcon size={18} />
+                </a>
+              )}
             </div>
             <p className="text-slate-400 text-sm leading-relaxed flex-1">
               {project.description}
