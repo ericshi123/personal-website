@@ -8,11 +8,11 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+    <header className="fixed top-0 inset-x-0 z-50 bg-[#FAF8F5]/85 backdrop-blur border-b border-[#E8E2D9]">
       <nav className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <a
           href="/"
-          className="text-sm font-semibold text-white hover:text-blue-400 transition-colors"
+          className="text-sm font-semibold text-[#1C1917] hover:text-[#C96A45] transition-colors"
         >
           XS
         </a>
@@ -21,7 +21,7 @@ export default function Navbar() {
             <li key={label}>
               <a
                 href={href}
-                className="text-sm text-slate-400 hover:text-white transition-colors"
+                className="text-sm text-[#78716C] hover:text-[#1C1917] transition-colors"
               >
                 {label}
               </a>

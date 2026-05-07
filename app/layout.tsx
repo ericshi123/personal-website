@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const geist = Geist({ subsets: ["latin"] });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
   title: "Xintong Shi — Data Scientist & ML Engineer",
@@ -18,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geist.className} scroll-smooth`}>
-      <body className="bg-slate-950 text-slate-200 antialiased">
+    <html lang="en" className={`${geist.className} ${playfair.variable} scroll-smooth`}>
+      <body className="bg-[#FAF8F5] text-[#1C1917] antialiased">
         <Navbar />
         {children}
         <Footer />
