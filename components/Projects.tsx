@@ -1,16 +1,25 @@
+"use client";
 import { GitHubIcon } from "@/components/icons";
 import { projects } from "@/data/projects";
+import { motion } from "framer-motion";
+import ParallaxWrapper from "@/components/ParallaxWrapper";
 
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 max-w-5xl mx-auto">
-      <h2 className="font-playfair text-3xl font-semibold text-[#1C1917] mb-12 text-center">
-        Projects
-      </h2>
+      <ParallaxWrapper speed={0.1}>
+        <h2 className="font-playfair text-3xl font-semibold text-[#1C1917] mb-12 text-center">
+          Projects
+        </h2>
+      </ParallaxWrapper>
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project) => (
-          <div
+          <motion.div
             key={project.name}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="bg-white border border-[#E8E2D9] rounded-xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="flex items-start justify-between gap-3">
@@ -49,7 +58,7 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

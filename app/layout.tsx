@@ -3,6 +3,7 @@ import { Geist, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BlackCat from "@/components/BlackCat";
 
 const geist = Geist({ subsets: ["latin"] });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en" className={`${geist.className} ${playfair.variable} scroll-smooth`}>
       <body className="bg-[#FAF8F5] text-[#1C1917] antialiased">
         <Navbar />
+        <BlackCat />
         {children}
         <Footer />
       </body>

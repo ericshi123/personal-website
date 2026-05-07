@@ -1,12 +1,16 @@
+"use client";
 import { ExternalLink } from "lucide-react";
 import { publications } from "@/data/publications";
+import ParallaxWrapper from "@/components/ParallaxWrapper";
 
 export default function Publications() {
   return (
     <section id="publications" className="py-24 px-6 max-w-3xl mx-auto">
-      <h2 className="font-playfair text-3xl font-semibold text-[#1C1917] mb-12 text-center">
-        Publications
-      </h2>
+      <ParallaxWrapper speed={0.1}>
+        <h2 className="font-playfair text-3xl font-semibold text-[#1C1917] mb-12 text-center">
+          Publications
+        </h2>
+      </ParallaxWrapper>
       <ul className="space-y-8">
         {publications.map((pub) => (
           <li key={pub.title} className="border-l-2 border-[#C96A45]/40 pl-5">
