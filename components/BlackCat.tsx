@@ -9,10 +9,10 @@ function SleepingCat() {
     <g>
       <ellipse cx="40" cy="55" rx="28" ry="18" fill="#1a1a1a" />
       <circle cx="62" cy="44" r="14" fill="#1a1a1a" />
-      <polygon points="54,32 58,42 50,42" fill="#1a1a1a" />
-      <polygon points="68,32 72,42 64,42" fill="#1a1a1a" />
-      <polygon points="55,34 58,40 52,40" fill="#3d1a1a" />
-      <polygon points="69,34 72,40 66,40" fill="#3d1a1a" />
+      <polygon points="53,26 58,40 49,40" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
+      <polygon points="67,26 73,40 63,40" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
+      <polygon points="54,28 58,38 51,38" fill="#C96A45" opacity="0.7" />
+      <polygon points="68,28 73,38 65,38" fill="#C96A45" opacity="0.7" />
       <path d="M57 44 Q60 47 63 44" stroke="#FAF8F5" strokeWidth="1.5" fill="none" strokeLinecap="round" />
       <path d="M64 44 Q67 47 70 44" stroke="#FAF8F5" strokeWidth="1.5" fill="none" strokeLinecap="round" />
       <ellipse cx="63" cy="49" rx="2" ry="1.5" fill="#C96A45" />
@@ -29,10 +29,10 @@ function WalkingCat({ frame }: { frame: number }) {
     <g>
       <ellipse cx="42" cy="50" rx="25" ry="15" fill="#1a1a1a" />
       <circle cx="64" cy="40" r="14" fill="#1a1a1a" />
-      <polygon points="56,28 60,38 52,38" fill="#1a1a1a" />
-      <polygon points="70,28 74,38 66,38" fill="#1a1a1a" />
-      <polygon points="57,30 60,36 54,36" fill="#3d1a1a" />
-      <polygon points="71,30 74,36 68,36" fill="#3d1a1a" />
+      <polygon points="55,22 60,37 51,37" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
+      <polygon points="69,22 75,37 65,37" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
+      <polygon points="56,24 60,35 53,35" fill="#C96A45" opacity="0.7" />
+      <polygon points="70,24 75,35 67,35" fill="#C96A45" opacity="0.7" />
       <circle cx="60" cy="40" r="3" fill="#FAF8F5" />
       <circle cx="69" cy="40" r="3" fill="#FAF8F5" />
       <circle cx="60" cy="40" r="1.5" fill="#111" />
@@ -54,10 +54,10 @@ function PlayingCat() {
     <g>
       <ellipse cx="45" cy="55" rx="22" ry="14" fill="#1a1a1a" transform="rotate(-15, 45, 55)" />
       <circle cx="66" cy="35" r="14" fill="#1a1a1a" />
-      <polygon points="58,22 62,33 54,33" fill="#1a1a1a" />
-      <polygon points="72,20 76,31 68,31" fill="#1a1a1a" />
-      <polygon points="59,24 62,31 56,31" fill="#3d1a1a" />
-      <polygon points="73,22 76,29 70,29" fill="#3d1a1a" />
+      <polygon points="57,15 62,32 53,32" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
+      <polygon points="71,14 77,31 66,31" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
+      <polygon points="58,18 62,30 55,30" fill="#C96A45" opacity="0.7" />
+      <polygon points="72,16 77,29 68,29" fill="#C96A45" opacity="0.7" />
       <circle cx="62" cy="35" r="4" fill="#FAF8F5" />
       <circle cx="72" cy="35" r="4" fill="#FAF8F5" />
       <circle cx="62" cy="35" r="2" fill="#111" />
@@ -75,7 +75,6 @@ function PlayingCat() {
 export default function BlackCat() {
   const [catState, setCatState] = useState<CatState>("sleeping");
   const [walkFrame, setWalkFrame] = useState(0);
-  const [position, setPosition] = useState(55);
 
   useEffect(() => {
     if (catState !== "walking") return;
@@ -91,17 +90,8 @@ export default function BlackCat() {
 
   useEffect(() => {
     if (catState !== "walking") return;
-    const moveInterval = setInterval(() => {
-      setPosition((p) => {
-        const next = p + (Math.random() - 0.5) * 10;
-        return Math.max(20, Math.min(75, next));
-      });
-    }, 800);
     const stateTimer = setTimeout(() => setCatState("playing"), 6000);
-    return () => {
-      clearInterval(moveInterval);
-      clearTimeout(stateTimer);
-    };
+    return () => clearTimeout(stateTimer);
   }, [catState]);
 
   useEffect(() => {
@@ -129,11 +119,18 @@ export default function BlackCat() {
   };
 
   return (
-    <div
-      className="fixed right-0 z-40 cursor-pointer group"
-      style={{ top: `${position}%`, transform: "translateY(-50%)" }}
+    <motion.div
+      drag
+      dragMomentum={false}
+      dragElastic={0.05}
+      className="fixed z-40 group"
+      style={{
+        right: 0,
+        bottom: "30%",
+        cursor: "grab",
+      }}
+      whileDrag={{ cursor: "grabbing", scale: 1.05 }}
       onClick={cycleState}
-      title={tooltips[catState]}
     >
       <div className="absolute right-[94px] top-1/2 -translate-y-1/2 bg-[#1C1917] text-[#FAF8F5] text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
         {tooltips[catState]}
@@ -187,6 +184,6 @@ export default function BlackCat() {
         className="absolute bottom-0 right-2 w-2 h-2 rounded-full"
         style={{ backgroundColor: dotColors[catState] }}
       />
-    </div>
+    </motion.div>
   );
 }

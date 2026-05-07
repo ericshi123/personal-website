@@ -9,9 +9,9 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center text-center px-6 bg-gradient-to-b from-[#FAF8F5] to-[#F5F0E8] relative overflow-hidden"
     >
-      <RollingGear size={140} direction={1} duration={18} className="absolute top-16 right-6 sm:right-14 opacity-30 pointer-events-none" />
-      <RollingGear size={70} direction={-1} duration={9} className="absolute bottom-28 left-6 opacity-20 pointer-events-none" />
-      <ParallaxWrapper speed={0.15} className="flex flex-col items-center text-center">
+      <RollingGear size={140} direction={1} duration={18} className="absolute top-16 right-6 sm:right-14 opacity-70 pointer-events-none" />
+      <RollingGear size={70} direction={-1} duration={9} className="absolute bottom-28 left-6 opacity-50 pointer-events-none" />
+      <ParallaxWrapper speed={0.4} className="flex flex-col items-center text-center">
         <h1 className="font-playfair text-5xl sm:text-6xl font-bold tracking-tight text-[#1C1917] mb-3">
           Xintong Shi
         </h1>
