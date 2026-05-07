@@ -8,7 +8,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 max-w-5xl mx-auto">
       <ParallaxWrapper speed={0.1}>
-        <h2 className="font-playfair text-3xl font-semibold text-[#1C1917] mb-12 text-center">
+        <h2 className="font-playfair text-3xl font-semibold text-[#1C1917] mb-16 text-center">
           Projects
         </h2>
       </ParallaxWrapper>

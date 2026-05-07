@@ -6,7 +6,7 @@ const RESUME_URL =
 export default function ResumeSection() {
   return (
     <section id="resume" className="py-24 px-6 text-center">
-      <h2 className="font-playfair text-3xl font-semibold text-[#1C1917] mb-4">Resume</h2>
+      <h2 className="font-playfair text-3xl font-semibold text-[#1C1917] mb-6">Resume</h2>
       <p className="text-[#78716C] mb-8 text-sm">
         Opens in Google Docs — no download required.
       </p>
