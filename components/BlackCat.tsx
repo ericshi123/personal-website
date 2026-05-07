@@ -7,52 +7,72 @@ type CatState = "sleeping" | "walking" | "playing";
 function SleepingCat() {
   return (
     <g>
-      <ellipse cx="40" cy="55" rx="28" ry="18" fill="#1a1a1a" />
-      <circle cx="62" cy="44" r="14" fill="#1a1a1a" />
-      {/* Left ear - emerges from top-left of head */}
-      <polygon points="52,38 56,24 62,36" fill="#1a1a1a" />
-      {/* Right ear - emerges from top-right of head */}
-      <polygon points="62,36 68,24 72,38" fill="#1a1a1a" />
-      {/* Left ear inner */}
-      <polygon points="54,36 57,26 61,35" fill="#e88fa0" />
-      {/* Right ear inner */}
-      <polygon points="63,35 67,26 70,36" fill="#e88fa0" />
-      <path d="M57 44 Q60 47 63 44" stroke="#FAF8F5" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      <path d="M64 44 Q67 47 70 44" stroke="#FAF8F5" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      <ellipse cx="63" cy="49" rx="2" ry="1.5" fill="#C96A45" />
-      <path d="M15 50 Q5 30 20 25 Q35 20 30 40" stroke="#1a1a1a" strokeWidth="6" fill="none" strokeLinecap="round" />
-      <ellipse cx="35" cy="68" rx="8" ry="4" fill="#1a1a1a" />
-      <ellipse cx="50" cy="70" rx="8" ry="4" fill="#1a1a1a" />
+      {/* Body loaf — wide rounded dome */}
+      <ellipse cx="50" cy="62" rx="34" ry="22" fill="#111111" />
+      {/* Head — round, sitting on top of body */}
+      <circle cx="50" cy="38" r="20" fill="#111111" />
+      {/* Left ear */}
+      <polygon points="32,24 38,38 26,36" fill="#111111" />
+      {/* Right ear */}
+      <polygon points="68,24 74,36 62,38" fill="#111111" />
+      {/* Left ear inner line */}
+      <polygon points="33,26 37,36 28,35" fill="#111111" stroke="white" strokeWidth="1" />
+      {/* Right ear inner line */}
+      <polygon points="67,26 72,35 63,36" fill="#111111" stroke="white" strokeWidth="1" />
+      {/* Eyes closed — two curved smile lines (sleeping) */}
+      <path d="M40 37 Q43 41 46 37" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <path d="M54 37 Q57 41 60 37" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
+      {/* Whiskers left */}
+      <line x1="30" y1="38" x2="44" y2="40" stroke="white" strokeWidth="1" strokeLinecap="round" />
+      <line x1="30" y1="41" x2="44" y2="42" stroke="white" strokeWidth="1" strokeLinecap="round" />
+      {/* Whiskers right */}
+      <line x1="70" y1="38" x2="56" y2="40" stroke="white" strokeWidth="1" strokeLinecap="round" />
+      <line x1="70" y1="41" x2="56" y2="42" stroke="white" strokeWidth="1" strokeLinecap="round" />
+      {/* Tail tucked around body */}
+      <path d="M16 68 Q8 80 20 82 Q36 84 38 72" stroke="#111111" strokeWidth="7" fill="none" strokeLinecap="round" />
+      {/* Paw lines on loaf */}
+      <line x1="36" y1="75" x2="36" y2="82" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
+      <line x1="50" y1="77" x2="50" y2="84" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
+      <line x1="64" y1="75" x2="64" y2="82" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.5" />
     </g>
   );
 }
 
 function WalkingCat({ frame }: { frame: number }) {
-  const off = frame % 2 === 0 ? 5 : -5;
+  const tailCurve = frame % 2 === 0 ? "M72 70 Q85 50 80 30 Q78 18 70 22" : "M72 70 Q88 48 82 28 Q80 16 72 20";
   return (
     <g>
-      <ellipse cx="42" cy="50" rx="25" ry="15" fill="#1a1a1a" />
-      <circle cx="64" cy="40" r="14" fill="#1a1a1a" />
+      {/* Body — tall egg shape */}
+      <ellipse cx="50" cy="62" rx="22" ry="28" fill="#111111" />
+      {/* Head */}
+      <circle cx="50" cy="28" r="20" fill="#111111" />
       {/* Left ear */}
-      <polygon points="54,34 58,20 64,32" fill="#1a1a1a" />
+      <polygon points="34,14 40,28 28,26" fill="#111111" />
       {/* Right ear */}
-      <polygon points="64,32 70,20 74,34" fill="#1a1a1a" />
+      <polygon points="66,14 72,26 60,28" fill="#111111" />
       {/* Left ear inner */}
-      <polygon points="56,32 59,22 63,31" fill="#e88fa0" />
+      <polygon points="35,16 39,26 30,25" fill="#111111" stroke="white" strokeWidth="1" />
       {/* Right ear inner */}
-      <polygon points="65,31 69,22 72,32" fill="#e88fa0" />
-      <circle cx="60" cy="40" r="3" fill="#FAF8F5" />
-      <circle cx="69" cy="40" r="3" fill="#FAF8F5" />
-      <circle cx="60" cy="40" r="1.5" fill="#111" />
-      <circle cx="69" cy="40" r="1.5" fill="#111" />
-      <ellipse cx="64" cy="46" rx="2" ry="1.5" fill="#C96A45" />
-      <line x1="54" y1="45" x2="42" y2="43" stroke="#FAF8F5" strokeWidth="0.8" opacity="0.7" />
-      <line x1="54" y1="47" x2="42" y2="47" stroke="#FAF8F5" strokeWidth="0.8" opacity="0.7" />
-      <path d="M18 50 Q10 30 22 18 Q28 12 32 20" stroke="#1a1a1a" strokeWidth="6" fill="none" strokeLinecap="round" />
-      <line x1="35" y1="62" x2={35 + off} y2="78" stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
-      <line x1="45" y1="63" x2={45 - off} y2="78" stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
-      <line x1="52" y1="62" x2={52 + off} y2="78" stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
-      <line x1="28" y1="60" x2={28 - off} y2="76" stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
+      <polygon points="65,16 70,25 61,26" fill="#111111" stroke="white" strokeWidth="1" />
+      {/* Eyes — large white circles with black pupils */}
+      <circle cx="42" cy="27" r="6" fill="white" />
+      <circle cx="58" cy="27" r="6" fill="white" />
+      <circle cx="43" cy="28" r="3" fill="#111111" />
+      <circle cx="59" cy="28" r="3" fill="#111111" />
+      {/* Eye shine */}
+      <circle cx="44" cy="26" r="1" fill="white" />
+      <circle cx="60" cy="26" r="1" fill="white" />
+      {/* Whiskers left */}
+      <line x1="28" y1="30" x2="42" y2="33" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="28" y1="34" x2="42" y2="35" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      {/* Whiskers right */}
+      <line x1="72" y1="30" x2="58" y2="33" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="72" y1="34" x2="58" y2="35" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      {/* Front paws at bottom */}
+      <ellipse cx="40" cy="87" rx="9" ry="5" fill="#111111" />
+      <ellipse cx="60" cy="87" rx="9" ry="5" fill="#111111" />
+      {/* Tail — animated curve */}
+      <path d={tailCurve} stroke="#111111" strokeWidth="7" fill="none" strokeLinecap="round" />
     </g>
   );
 }
@@ -60,26 +80,39 @@ function WalkingCat({ frame }: { frame: number }) {
 function PlayingCat() {
   return (
     <g>
-      <ellipse cx="45" cy="55" rx="22" ry="14" fill="#1a1a1a" transform="rotate(-15, 45, 55)" />
-      <circle cx="66" cy="35" r="14" fill="#1a1a1a" />
-      {/* Left ear */}
-      <polygon points="56,29 60,15 66,27" fill="#1a1a1a" />
+      {/* Body on back — wide rounded shape */}
+      <ellipse cx="50" cy="60" rx="30" ry="22" fill="#111111" />
+      {/* Head tilted to side */}
+      <circle cx="30" cy="42" r="18" fill="#111111" />
+      {/* Left ear (on the head, now tilted) */}
+      <polygon points="16,28 22,42 12,40" fill="#111111" />
       {/* Right ear */}
-      <polygon points="66,27 72,15 76,29" fill="#1a1a1a" />
+      <polygon points="34,26 42,38 30,40" fill="#111111" />
       {/* Left ear inner */}
-      <polygon points="58,27 61,17 65,26" fill="#e88fa0" />
+      <polygon points="17,30 21,40 13,39" fill="#111111" stroke="white" strokeWidth="1" />
       {/* Right ear inner */}
-      <polygon points="67,26 71,17 74,27" fill="#e88fa0" />
-      <circle cx="62" cy="35" r="4" fill="#FAF8F5" />
-      <circle cx="72" cy="35" r="4" fill="#FAF8F5" />
-      <circle cx="62" cy="35" r="2" fill="#111" />
-      <circle cx="72" cy="35" r="2" fill="#111" />
-      <ellipse cx="66" cy="41" rx="2" ry="1.5" fill="#C96A45" />
-      <line x1="60" y1="48" x2="50" y2="68" stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
-      <line x1="50" y1="50" x2="38" y2="68" stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
-      <line x1="30" y1="58" x2="22" y2="75" stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
-      <line x1="38" y1="62" x2="32" y2="78" stroke="#1a1a1a" strokeWidth="5" strokeLinecap="round" />
-      <path d="M25 52 Q10 35 18 20 Q24 10 30 22 Q36 34 20 38" stroke="#1a1a1a" strokeWidth="6" fill="none" strokeLinecap="round" />
+      <polygon points="35,28 41,37 31,39" fill="#111111" stroke="white" strokeWidth="1" />
+      {/* Eyes — wide and excited */}
+      <circle cx="24" cy="42" r="6" fill="white" />
+      <circle cx="37" cy="40" r="6" fill="white" />
+      <circle cx="25" cy="43" r="3" fill="#111111" />
+      <circle cx="38" cy="41" r="3" fill="#111111" />
+      {/* Eye shine */}
+      <circle cx="26" cy="41" r="1" fill="white" />
+      <circle cx="39" cy="39" r="1" fill="white" />
+      {/* Whiskers */}
+      <line x1="10" y1="44" x2="22" y2="46" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="10" y1="47" x2="22" y2="48" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="46" y1="43" x2="34" y2="46" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="46" y1="46" x2="34" y2="48" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      {/* Paws in the air */}
+      <ellipse cx="38" cy="22" rx="7" ry="9" fill="#111111" transform="rotate(-20, 38, 22)" />
+      <ellipse cx="58" cy="18" rx="7" ry="9" fill="#111111" transform="rotate(15, 58, 18)" />
+      <ellipse cx="72" cy="28" rx="7" ry="9" fill="#111111" transform="rotate(30, 72, 28)" />
+      {/* Tail up and curling */}
+      <path d="M76 68 Q90 50 84 32 Q80 22 72 28" stroke="#111111" strokeWidth="7" fill="none" strokeLinecap="round" />
+      {/* Belly line hint */}
+      <line x1="34" y1="62" x2="66" y2="62" stroke="white" strokeWidth="0.8" strokeLinecap="round" opacity="0.3" />
     </g>
   );
 }
@@ -180,9 +213,9 @@ export default function BlackCat() {
         }
       >
         <svg
-          width="90"
-          height="90"
-          viewBox="0 0 90 90"
+          width="100"
+          height="100"
+          viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
           style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.18))" }}
         >
