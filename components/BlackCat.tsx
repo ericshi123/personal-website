@@ -9,10 +9,14 @@ function SleepingCat() {
     <g>
       <ellipse cx="40" cy="55" rx="28" ry="18" fill="#1a1a1a" />
       <circle cx="62" cy="44" r="14" fill="#1a1a1a" />
-      <polygon points="53,26 58,40 49,40" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
-      <polygon points="67,26 73,40 63,40" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
-      <polygon points="54,28 58,38 51,38" fill="#C96A45" opacity="0.7" />
-      <polygon points="68,28 73,38 65,38" fill="#C96A45" opacity="0.7" />
+      {/* Left ear - emerges from top-left of head */}
+      <polygon points="52,38 56,24 62,36" fill="#1a1a1a" />
+      {/* Right ear - emerges from top-right of head */}
+      <polygon points="62,36 68,24 72,38" fill="#1a1a1a" />
+      {/* Left ear inner */}
+      <polygon points="54,36 57,26 61,35" fill="#e88fa0" />
+      {/* Right ear inner */}
+      <polygon points="63,35 67,26 70,36" fill="#e88fa0" />
       <path d="M57 44 Q60 47 63 44" stroke="#FAF8F5" strokeWidth="1.5" fill="none" strokeLinecap="round" />
       <path d="M64 44 Q67 47 70 44" stroke="#FAF8F5" strokeWidth="1.5" fill="none" strokeLinecap="round" />
       <ellipse cx="63" cy="49" rx="2" ry="1.5" fill="#C96A45" />
@@ -29,10 +33,14 @@ function WalkingCat({ frame }: { frame: number }) {
     <g>
       <ellipse cx="42" cy="50" rx="25" ry="15" fill="#1a1a1a" />
       <circle cx="64" cy="40" r="14" fill="#1a1a1a" />
-      <polygon points="55,22 60,37 51,37" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
-      <polygon points="69,22 75,37 65,37" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
-      <polygon points="56,24 60,35 53,35" fill="#C96A45" opacity="0.7" />
-      <polygon points="70,24 75,35 67,35" fill="#C96A45" opacity="0.7" />
+      {/* Left ear */}
+      <polygon points="54,34 58,20 64,32" fill="#1a1a1a" />
+      {/* Right ear */}
+      <polygon points="64,32 70,20 74,34" fill="#1a1a1a" />
+      {/* Left ear inner */}
+      <polygon points="56,32 59,22 63,31" fill="#e88fa0" />
+      {/* Right ear inner */}
+      <polygon points="65,31 69,22 72,32" fill="#e88fa0" />
       <circle cx="60" cy="40" r="3" fill="#FAF8F5" />
       <circle cx="69" cy="40" r="3" fill="#FAF8F5" />
       <circle cx="60" cy="40" r="1.5" fill="#111" />
@@ -54,10 +62,14 @@ function PlayingCat() {
     <g>
       <ellipse cx="45" cy="55" rx="22" ry="14" fill="#1a1a1a" transform="rotate(-15, 45, 55)" />
       <circle cx="66" cy="35" r="14" fill="#1a1a1a" />
-      <polygon points="57,15 62,32 53,32" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
-      <polygon points="71,14 77,31 66,31" fill="#1a1a1a" stroke="#C96A45" strokeWidth="1.5" />
-      <polygon points="58,18 62,30 55,30" fill="#C96A45" opacity="0.7" />
-      <polygon points="72,16 77,29 68,29" fill="#C96A45" opacity="0.7" />
+      {/* Left ear */}
+      <polygon points="56,29 60,15 66,27" fill="#1a1a1a" />
+      {/* Right ear */}
+      <polygon points="66,27 72,15 76,29" fill="#1a1a1a" />
+      {/* Left ear inner */}
+      <polygon points="58,27 61,17 65,26" fill="#e88fa0" />
+      {/* Right ear inner */}
+      <polygon points="67,26 71,17 74,27" fill="#e88fa0" />
       <circle cx="62" cy="35" r="4" fill="#FAF8F5" />
       <circle cx="72" cy="35" r="4" fill="#FAF8F5" />
       <circle cx="62" cy="35" r="2" fill="#111" />
