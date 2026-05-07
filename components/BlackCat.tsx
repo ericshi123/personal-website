@@ -11,14 +11,10 @@ function SleepingCat() {
       <ellipse cx="50" cy="62" rx="34" ry="22" fill="#111111" />
       {/* Head — round, sitting on top of body */}
       <circle cx="50" cy="38" r="20" fill="#111111" />
-      {/* Left ear */}
-      <polygon points="32,24 38,38 26,36" fill="#111111" />
-      {/* Right ear */}
-      <polygon points="68,24 74,36 62,38" fill="#111111" />
-      {/* Left ear inner line */}
-      <polygon points="33,26 37,36 28,35" fill="#111111" stroke="white" strokeWidth="1" />
-      {/* Right ear inner line */}
-      <polygon points="67,26 72,35 63,36" fill="#111111" stroke="white" strokeWidth="1" />
+      {/* Left ear — grows from upper-left of head */}
+      <polygon points="34,30 40,16 50,28" fill="#111111" />
+      {/* Right ear — grows from upper-right of head */}
+      <polygon points="50,28 60,16 66,30" fill="#111111" />
       {/* Eyes closed — two curved smile lines (sleeping) */}
       <path d="M40 37 Q43 41 46 37" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
       <path d="M54 37 Q57 41 60 37" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
@@ -47,13 +43,9 @@ function WalkingCat({ frame }: { frame: number }) {
       {/* Head */}
       <circle cx="50" cy="28" r="20" fill="#111111" />
       {/* Left ear */}
-      <polygon points="34,14 40,28 28,26" fill="#111111" />
+      <polygon points="34,20 40,6 50,18" fill="#111111" />
       {/* Right ear */}
-      <polygon points="66,14 72,26 60,28" fill="#111111" />
-      {/* Left ear inner */}
-      <polygon points="35,16 39,26 30,25" fill="#111111" stroke="white" strokeWidth="1" />
-      {/* Right ear inner */}
-      <polygon points="65,16 70,25 61,26" fill="#111111" stroke="white" strokeWidth="1" />
+      <polygon points="50,18 60,6 66,20" fill="#111111" />
       {/* Eyes — large white circles with black pupils */}
       <circle cx="42" cy="27" r="6" fill="white" />
       <circle cx="58" cy="27" r="6" fill="white" />
@@ -84,14 +76,10 @@ function PlayingCat() {
       <ellipse cx="50" cy="60" rx="30" ry="22" fill="#111111" />
       {/* Head tilted to side */}
       <circle cx="30" cy="42" r="18" fill="#111111" />
-      {/* Left ear (on the head, now tilted) */}
-      <polygon points="16,28 22,42 12,40" fill="#111111" />
+      {/* Left ear */}
+      <polygon points="16,36 20,22 30,32" fill="#111111" />
       {/* Right ear */}
-      <polygon points="34,26 42,38 30,40" fill="#111111" />
-      {/* Left ear inner */}
-      <polygon points="17,30 21,40 13,39" fill="#111111" stroke="white" strokeWidth="1" />
-      {/* Right ear inner */}
-      <polygon points="35,28 41,37 31,39" fill="#111111" stroke="white" strokeWidth="1" />
+      <polygon points="30,32 40,22 44,34" fill="#111111" />
       {/* Eyes — wide and excited */}
       <circle cx="24" cy="42" r="6" fill="white" />
       <circle cx="37" cy="40" r="6" fill="white" />
