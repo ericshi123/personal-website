@@ -15,9 +15,9 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ericshi123/ordinal-conditional-network",
   },
   {
-    name: "Polymarket Intelligence",
+    name: "Betting Market Trader",
     description:
-      "ML-powered prediction market analysis and automated trading logic built on the PolyClaw skill framework.",
+      "ML-powered Kalshi trading bot and automated trading logic built on the PolyClaw skill framework.",
     techStack: ["Python", "Next.js", "PolyClaw"],
     githubUrl: null,
     badge: "In Progress",
