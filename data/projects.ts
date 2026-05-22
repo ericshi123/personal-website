@@ -8,6 +8,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "VoiceGuard",
+    description:
+      "Configurable voice assistant safety framework with bidirectional guardrails for the OpenAI Realtime API. Features pluggable safety policies, real-time transcript interception, race condition handling, and a HarmBench-aligned evaluation harness.",
+    techStack: ["Python", "OpenAI Realtime API", "Anthropic API", "asyncio"],
+    githubUrl: "https://github.com/ericshi123/voiceguard",
+  },
+  {
     name: "Ordinal Regression Network",
     description:
       "Rank-consistent deep learning method for ordinal regression using conditional probabilities. Published in Pattern Analysis and Applications (2023).",
