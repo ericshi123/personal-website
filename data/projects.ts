@@ -36,4 +36,11 @@ export const projects: Project[] = [
     techStack: ["Python", "OpenClaw", "ClawHub"],
     githubUrl: "https://github.com/ericshi123/job-search-tailor-skill",
   },
+  {
+    name: "QuizMe",
+    description:
+      "Adaptive tech quiz skill for OpenClaw. Asks one question at a time with code snippets, adapts difficulty dynamically, and uses a rolling question bank — generating batches via GPT-4o-mini, refilling when low, and graduating users to harder levels at 80% accuracy. Published on ClawHub.",
+    techStack: ["Python", "OpenAI API", "OpenClaw", "ClawHub"],
+    githubUrl: "https://github.com/ericshi123/quizme",
+  },
 ];
